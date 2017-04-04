@@ -14,6 +14,29 @@ export class RestaurantesListComponent implements OnInit{
   constructor(private _restauranteService: RestauranteService){}
 
   ngOnInit(){
+    this.getRestaurantes();
     console.log("restaurantes-list component cargado");
   }
+
+  getRestaurantes(){
+    this._restauranteService.getRestaurantes().subscribe(
+        result => {
+          this.restaurantes=result.data;
+          this.status = result.status;
+
+          if(this.status !== "success"){
+            alert("Error en el servidor");
+          }
+
+        },
+        error=> {
+          this.errorMessage = <any>error;
+          if(this.errorMessage);
+          alert("Error en la petición");
+        }
+    );
+
+
+  }
+
 }
