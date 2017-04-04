@@ -9,6 +9,11 @@ export class RestauranteService{
     constructor(private _http: Http){}
 
     getRestaurantes(){
-      return this._http.get("http://localhost/slim/restaurantes-api.php/restaurantes-list").map(res => res.json);
+      return this._http.get("http://localhost/slim/restaurantes-api.php/restaurantes").map(res => res.json);
+    }
+
+    getRestaurante(id: string){
+      return this._http.get("http://localhost/slim/restaurantes-api.php/restaurantes/"+id).map(res => res.json);
+
     }
 }

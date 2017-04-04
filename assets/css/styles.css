@@ -94,7 +94,7 @@ header h1{
   border-color: #1976D2;
   border-radius: 4px;
   box-shadow: 0px 0px 5px #ddd;
-  padding: 5px; 
+  padding: 5px;
   text-decoration: none;
   color:white;
   background: #0074D9;
@@ -108,4 +108,9 @@ header h1{
 .btn-eliminar{
   background: #E23237;
   border-color: #F54747;
+}
+
+.loading{
+  list-style: none;
+  text-decoration: none;
 }
